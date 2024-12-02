@@ -1,0 +1,140 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+/* Background for Home Page */
+body {
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background for Message Page */
+body.message-page {
+    background: linear-gradient(120deg, #004e92, #000428);
+    background-size: 400% 400%;
+    animation: gradientBGMessage 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes gradientBGMessage {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Centered Container */
+.container {
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 3s ease-out;
+}
+
+/* Button Styling */
+.button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #004e92;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+/* Heart Animation on Home Page */
+.heart-animation {
+    position: absolute;
+    top: 20%; /* Adjusted position so it doesn't cover the text */
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: #ff6b6b;
+    transform: translateX(-50%); /* Removed unnecessary rotation */
+    animation: heartbeat 1.5s ease-in-out infinite; /* Heartbeat effect */
+}
+
+.heart-animation:before,
+.heart-animation:after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: #ff6b6b;
+    border-radius: 50%;
+}
+
+.heart-animation:before {
+    top: -75px;
+    left: 0;
+}
+
+.heart-animation:after {
+    left: 75px;
+    top: 0;
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    30% {
+        transform: translateX(-50%) scale(1.2); /* Heart expands */
+    }
+    60% {
+        transform: translateX(-50%) scale(1);
+    }
+    100% {
+        transform: translateX(-50%) scale(1); /* Heart returns to normal */
+    }
+}
+
+
+
+
+
+/* Message Page Styling */
+.message {
+    font-size: 2rem;
+    line-height: 1.6;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+/* Teddy Bear Image */
+.teddy-image {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
